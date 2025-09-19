@@ -1,0 +1,19 @@
+<%- include('partials/header') %>
+
+<header class="main-header">
+    <h1>My Essays</h1>
+    <a href="/new" class="btn btn-primary">Create New Post</a>
+</header>
+
+<main>
+    <ul class="post-list">
+        <% posts.forEach(post => { %>
+            <li class="post-item">
+                <h2 class="post-item-title"><a href="/post/<%= post.id %>"><%= post.title %></a></h2>
+                <p class="post-item-meta">By <%= post.author %> on <%= new Date(post.date).toLocaleDateString() %></p>
+            </li>
+        <% }) %>
+    </ul>
+</main>
+
+<%- include('partials/footer') %>

@@ -1,0 +1,26 @@
+<%- include('partials/header') %>
+
+<main>
+    <h1>Create New Post</h1>
+
+    <form action="/new" method="POST">
+        <div class="form-group">
+            <label for="title" class="form-label">Title</label>
+            <input type="text" id="title" name="title" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="author" class="form-label">Author</label>
+            <input type="text" id="author" name="author" class="form-control" value="Admin" required>
+        </div>
+        <div class="form-group">
+            <label for="content" class="form-label">Content</label>
+            <textarea id="content" name="content" class="form-control" required></textarea>
+        </div>
+        <div class="form-actions">
+            <button type="submit" class="btn btn-primary">Save Post</button>
+            <a href="/" class="btn">Cancel</a>
+        </div>
+    </form>
+</main>
+
+<%- include('partials/footer') %>

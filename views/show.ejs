@@ -1,0 +1,22 @@
+<%- include('partials/header') %>
+
+<main>
+    <article class="post">
+        <h1><%= post.title %></h1>
+        <p class="post-item-meta">By <%= post.author %> on <%= new Date(post.date).toLocaleDateString() %></p>
+        
+        <div class="post-content">
+            <p><%= post.content %></p>
+        </div>
+
+        <div class="post-actions">
+             <a href="/" class="btn">← Back to Home</a>
+            <a href="/post/<%= post.id %>/edit" class="btn">Edit</a>
+            <form action="/post/<%= post.id %>/delete" method="POST" style="display: inline;">
+                <button type="submit" class="btn btn-danger">Delete</button>
+            </form>
+        </div>
+    </article>
+</main>
+
+<%- include('partials/footer') %>
